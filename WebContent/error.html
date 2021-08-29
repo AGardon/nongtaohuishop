@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ERROR</title>
+	<script src="js/jquery-1.12.0.min.js"></script>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background:url(./images/back.jpg);
+			background-size: cover;
+		}
+		div{
+			text-align: center;
+			color:#000;
+			font-size: 20px;
+		}
+		.errorinfo{
+			text-align: center;
+			margin-top: 16%;
+			font-size:100px;
+		}
+		#m{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<!--
+	<div class="errorinfo">404</div>
+	<div>抱歉，你要的页面去度假了，也许一会就会回来。</div>
+	-->
+	
+	<div class="errorinfo">500</div>
+	<div>抱歉，你要的页面生病了，希望它能早日康复。</div>
+	<div style="margin-top: 20px;"><span id="m">3</span> 秒钟后跳回首页。</div>
+<!--
+	<div class="errorinfo">账号丢失</div>
+	<div>请您拨打客服电话：4006505558，让他来帮你找回密码。</div>
+-->
+</body>
+<script type="text/javascript">
+$(function(){
+	var t = 3
+	setInterval(function(){
+		$("#m").html(t--);
+		if(t==0){
+			window.location.href="#ss"
+		}
+	},1000);
+})
+</script>
+</html>

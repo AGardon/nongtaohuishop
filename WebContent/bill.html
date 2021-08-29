@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>批发商城</title>
+    <link href="http://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/reset.css" type="text/css" rel="stylesheet" />
+  	<link href="css/base.css" type="text/css" rel="stylesheet" />    
+  	<link href="css/layout.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="./js/jquery-1.12.0.min.js"></script>
+    <style>
+	.mainbodyer{
+		margin-top:10px;
+		min-height:400px;
+	}
+	.footer{
+		margin-top:20px;
+	}
+	</style>
+</head>
+<body>
+	<div class="header">
+			<div class="header-top row">
+            	<div class="container">
+                	<div class="wel left">
+                    	欢迎来到农产品批发商城，选购商品前请登录
+                    </div>
+                    <div class="right login">
+                    	<a href="./shopcar.jsp"><i class="fa fa-shopping-cart" aria-hidden="true"></i> 购物车</a>
+                    	<a href="bill.html"><i class="fa fa-file-text-o" aria-hidden="true"></i> 我的订单</a>
+                        <a href="login.html" title="登入">登入</a>
+                        <a href="register.html" title="注册">注册</a>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+		<div class="container">
+			<div class="mean-bar row">
+                <div class="logo">
+                    <a href="./index.html"><img src="images/logo.png" title="批发商城" />
+                    <img class="title" src="images/title.png" title="批发商城" /></a>
+                </div>
+                <div class="right search">
+                    <input type="text" title="搜索想要购买的商品" />
+                    <input type="submit" value="搜 索" title="搜索" />
+                </div>
+       		</div>
+        </div>
+	</div>
+    <div class="clearfix"></div>
+	<div class="mainbodyer container">
+		<div class="bill">
+			<h3>我的订单</h3>
+			<div class="menu">
+			<ul>
+				<li class="active"><a href="billitems.jsp" data-state="未支付" target="billitemwin">待付款</a></li>
+				<li><a href="billitems.jsp" data-state="待发货" target="billitemwin">待发货</a></li>
+				<li><a href="billitems.jsp" data-state="已发货" target="billitemwin">已发货</a></li>
+				<li><a href="billitems.jsp" data-state="已完结" target="billitemwin">已完结</a></li>
+			</ul>
+			<script>
+				var local = window.localStorage;
+				$(".menu a").click(function(){
+					var state = $(this).attr("data-state");
+					local.setItem("state",state);
+				}).eq(0).trigger("click");
+				
+			</script>
+			<div class="clearfix"></div>
+			</div>
+			<div class="billlist">
+				<iframe height="800" src="billitems.jsp" name="billitemwin" id="billwin" scrolling="yes"></iframe>
+			</div>
+		</div>
+    </div>
+    <div class="clearfix"></div>
+	<div class="footer">
+        <div class="container">
+            <div class="info">
+              
+            </div>
+        </div>
+	</div>
+</body>
+<script type="text/javascript">
+	$(function(){
+		/* 所在页面active */
+		
+		function setPage(text){
+			var info = $(".header .bar ul li");
+			var i = "";
+			for( var t =0 ; t<info.length ;t++){
+				i = info.eq(t).find("a").html();
+				if(i == text){
+					info.eq(t).addClass("active");
+				}
+			}
+		}
+		
+		setPage("地域特色");
+
+		function getFocus(faID,chID,ele){
+			$(faID+" "+chID).removeClass("active");
+			$(ele).addClass("active");
+		}
+
+		$(".menu ul li").click(function(){
+			getFocus(".menu ul","li",this);
+		})
+
+	});
+
+	function setIframeHeight(iframe) {
+		if (iframe) { 
+			var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow; 
+			if (iframeWin.document.body) {
+				iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+			} 
+		} 
+	}; 
+
+	window.onload = function () {
+		setIframeHeight(document.getElementById('billwin')); 
+	};
+</script>
+</html>

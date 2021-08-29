@@ -1,0 +1,85 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8">
+<base href="<%=basePath%>">
+
+	<title>批发商城</title>
+    <link href="http://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/reset.css" type="text/css" rel="stylesheet" />
+  	<link href="css/base.css" type="text/css" rel="stylesheet" />  
+    <link href="css/layout2.css" type="text/css" rel="stylesheet" />  
+	<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+    <style>
+    .top{
+		background-image:url(images/shaow.png);
+		background-repeat:repeat-x;
+		background-position:bottom;
+	}
+    .register .left{
+        float: none;
+        border-right: none;
+        margin: 100px auto 0;
+        width: 500px;
+    }
+   .register .left div input[type="submit"]{
+        width: 120px;
+    }
+    .register .left a{
+    margin-left: 20px;
+    }
+    </style>
+</head>
+<body>
+<div class="top">
+    <div class="container">
+        <a href="index.html">
+            <img src="images/logo.png" />
+            <img src="images/title.png" />
+        </a>
+    </div>
+</div>
+<div class="register">
+    <div class="container">
+        <div class="left">
+            <form>
+                <h3>我的信息</h3>
+                <div style="margin:  0 auto;">
+                <div><span>密码</span><input type="password" placeholder="" /></div>
+                <div class="checkinfo">密码错误</div>
+                <div><span>昵称</span><input type="text" placeholder="" /></div>
+                <div class="checkinfo">密码错误</div>
+                <div><span>联系方式</span><input type="text" placeholder="" /></div>
+                <div class="checkinfo">密码错误</div>
+                <div><span>送货地址</span><input type="text" placeholder="" /></div>
+                <div class="checkinfo">密码错误</div>
+                <div><span>验证码</span><input type="text" placeholder="" />
+                <img src="images/set.png" /></div>
+                <div class="checkinfo">密码错误</div>
+                <div><input type="submit" value="确认修改" /><a href="./index.html">取消修改</a></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<div class="bottom">
+	<div class="container">
+	<div class="info">
+    	<a href="http://www.newshifang.com/"><img src="images/pb.png" />
+        十方科技有限公司技术支持<br />
+        Powered by ShiFang</a>
+    </div>
+    </div>
+</div>
+</body>
+</html>

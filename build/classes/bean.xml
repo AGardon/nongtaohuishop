@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<bean id="CateDao" class="com.yx.daoimpl.CateDaoImpl"></bean>
+	<bean id="GoodsDao" class="com.yx.daoimpl.GoodsDaoImpl"></bean>
+	<bean id="UserDao" class="com.yx.daoimpl.UserDaoImpl"></bean>
+	<bean id="CartDao" class="com.yx.daoimpl.CartDaoImpl"></bean>
+	<bean id="OrderDao" class="com.yx.daoimpl.OrderDaoImpl"></bean>
+	<bean id="OrderItemDao" class="com.yx.daoimpl.OrderItemDaoImpl"></bean>
+</beans>

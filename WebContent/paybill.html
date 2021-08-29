@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>批发商城</title>
+    <link href="http://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/reset.css" type="text/css" rel="stylesheet" />
+  	<link href="css/base.css" type="text/css" rel="stylesheet" />    
+  	<link href="css/layout.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="./js/jquery-1.12.0.min.js"></script>
+    <style>
+	.mainbodyer{
+		margin-top:10px;
+		min-height:400px;
+	}
+	.footer{
+		margin-top:20px;
+	}
+	</style>
+<script type="text/javascript">
+	var local = window.localStorage;
+	var oid = local.getItem("oid");
+	$(function(){
+		var url="http://127.0.0.1:8080/NongWeb/Orders/findItems.do?oid="+oid;
+		$.get(url,null,function(res){
+			console.log(res);
+			var odate = res[0].order.orderDate;
+			var time = getMyDate(odate);
+			var orderId = res[0].order.orderId;
+			$("#orders").html(orderId);
+			$("#timer").html(time);
+			var sumMoney = res[0].order.sumMoney;
+			var sumNet = res[0].order.sumNet;
+			$("#count").html(sumNet);
+			$("#sum").html(sumMoney);
+			
+			var text="";
+			$.each(res,function(k,v){
+				text+='<tr><td><img src="'+v.goods.image+'" /></td>'+
+				'<td>'+v.goods.goodsTitle+'</td>'+
+				'<td>￥ '+v.goods.priceP+'</td>'+
+                '<td>'+v.amount+' '+v.goods.unit+'</td>'+
+                '<td>￥ '+v.money+'.00</td></tr>';			
+			});
+			$("tbody").html(text);
+			
+		});
+	});
+	//处理日期
+	function getMyDate(de){
+		var myDate=new Date(de);
+		//年
+		var year = myDate.getFullYear();
+		//月
+		var mon = myDate.getMonth()+1;
+		mon = timeStr(mon);
+		//日
+		var day = myDate.getDate();
+		day = timeStr(day);
+		//时
+		var hour=myDate.getHours();
+		hour = timeStr(hour);
+		//分
+		var min = myDate.getMinutes();
+		min = timeStr(min);
+		//秒
+		var sec= myDate.getSeconds();
+		sec=timeStr(sec);
+		
+		var time = year+'/'+mon+'/'+day+' '+hour+':'+min+':'+sec;
+		
+		return time;
+	}
+	//补足小于10的部分
+	function timeStr(str){
+		if(str<10)
+		{
+			return "0"+str;
+		}
+		return str;
+	}
+	
+	
+</script>
+</head>
+<body>
+	<div class="header">
+			<div class="header-top row">
+            	<div class="container">
+                	<div class="wel left">
+                    	欢迎来到农产品批发商城，选购商品前请登录
+                    </div>
+                    <div class="right login">
+                    	<a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> 购物车</a>
+                    	<a href=""><i class="fa fa-file-text-o" aria-hidden="true"></i> 我的订单</a>
+                        <a href="login.html" title="登入">登入</a>
+                        <a href="register.html" title="注册">注册</a>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+		<div class="container">
+			<div class="mean-bar row">
+                <div class="logo">
+                    <a href="./index.html"><img src="images/logo.png" title="批发商城" />
+                    <img class="title" src="images/title.png" title="批发商城" /></a>
+                </div>
+                <div class="right search">
+                    <input type="text" title="搜索想要购买的商品" />
+                    <input type="submit" value="搜 索" title="搜索" />
+                </div>
+       		</div>
+        </div>
+	</div>
+    <div class="clearfix"></div>
+	<div class="mainbodyer container">
+    <div class="car">
+        <h3>支付订单</h3>
+       <div class="billinfo">
+        	<div>订单编号：<span id="orders"></span></div>
+        	<div>订单日期：<span id="timer"></span></div>
+        </div>
+        <table>
+        	<thead>
+        	<tr>
+                <th>商品</th>
+                <th>商品名称</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th>金额</th>
+            </tr>
+            <thead>
+            <tbody>
+            <tr>
+                <td><img src="images/HTGY-ME-01.jpg" /></td>
+                <td>刺五加秋木耳</td>
+                <td>￥ 216.00</td>
+                <td>10 袋</td>
+                <td>￥ 2160.00</td>
+            </tr>
+            <tr>
+                <td><img src="images/HTGY-ME-01.jpg" /></td>
+                <td>刺五加秋木耳</td>
+                <td>￥ 216.00</td>
+                <td>10 袋</td>
+                <td>￥ 2160.00</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="carbar">
+        	<div>
+            	<input type="checkbox" /> 全选
+            </div>
+            <div>
+            	<input type="button" value="删除" />
+            </div>
+            <div></div>
+            <div></div>
+              <div>
+            	已购买商品 <span id="count"></span> 件
+            </div>
+           	<div class="price">
+            	合计：<span id="sum"></span> 元
+            </div>
+            <div>
+            	<a href="#">支付</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="clearfix"></div>
+	<div class="footer">
+        <div class="container">
+            <div class="info">
+               
+            </div>
+        </div>
+	</div>
+</body>
+<script type="text/javascript">
+	$(function(){
+		/* 所在页面active */
+		
+		function setPage(text){
+			var info = $(".header .bar ul li");
+			var i = "";
+			for( var t =0 ; t<info.length ;t++){
+				i = info.eq(t).find("a").html();
+				if(i == text){
+					info.eq(t).addClass("active");
+				}
+			}
+		}
+		
+		setPage("地域特色");
+	});
+</script>
+</html>

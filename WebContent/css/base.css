@@ -1,0 +1,22 @@
+/* base.css */
+@CHARSET "UTF-8";
+
+body{
+	font-size: 12px;
+}
+.container{
+	width: 1170px;
+	margin:0 auto;
+}
+.row{
+	display: block;
+	width: 100%;
+	clear: both;
+	float: left;
+}
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}

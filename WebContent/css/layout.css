@@ -1,0 +1,672 @@
+/* layout.css */
+@CHARSET "UTF-8";
+body{
+	background:#fafafa;
+	letter-spacing:1px;
+}
+
+/* header */
+.header{
+	position:relative;
+}
+
+/* header-top part */
+.header-top{
+	height:35px;
+	background:#ECECEC;
+	margin-bottom:10px;
+	box-shadow:0px 0px 5px #999;
+}
+.header-top .wel{
+	line-height:35px;
+	color:#069;
+}
+
+/* login part*/
+.login{
+	height:auto;
+	line-height:35px;
+}
+.login a{
+	padding:2px 5px;
+	text-align:center;
+}
+.login a:nth-child(3){
+	margin-left:20px;
+}
+
+
+
+/* logo part */
+.mean-bar{
+	position:relative;
+	padding:10px;
+}
+.logo{
+	position:relative;
+	z-index:9;
+}
+.logo img{
+	width:120px;
+	height:90px;
+	float:left;
+}
+.logo .title{
+	margin-top:10px;
+	height:60px;
+	width:180px;
+}
+
+
+/* search part */
+.search{
+	width:860px;
+	height:90px;
+}
+.search input{
+	margin-top:20px;
+	display:block;
+	float:left;
+	border:1px solid #CCC;
+	font-size:15px;
+	color:#FFF;
+}
+.search input[type="text"]{
+	margin-left:160px;
+	width:360px;
+	height:34px;
+	padding:2px;
+	color:#000;
+}
+.search input[type="text"]:hover,.search input[type="text"]:focus{
+	border-color:#36F;
+}
+.search input[type="submit"]{
+	width:80px;
+	height:40px;
+	background:#cecece;	
+}
+
+.search input[type="submit"]:hover{
+	background:#E1E1E1;
+	border-color:#36F;
+}
+
+/* bar part */
+.header .bar{
+	height:50px;
+	background:#44b548;
+}
+.header .bar ul{
+	margin-left:90px;
+}
+.header .bar ul li{
+	display:block;
+	float:left;
+	width:120px;
+	font-size:16px;
+	text-align:center;
+	height:50px;
+	transition: 0.5s;
+	
+}
+.header .bar ul li:hover{
+	background:#4ed352;
+}
+.header .bar ul li a{
+	margin-top:15px;	
+	display:block;
+	width:100%;
+	border-left:1px solid #fafafa;
+	color:#FFF;
+	line-height:20px;
+}
+.header .bar ul li.active{
+	background:#4ed352;
+	height:47px;
+	border-bottom:3px solid #666;
+}
+.header .bar ul li:last-child a{
+	border-right:1px solid #fafafa;
+	
+}
+
+/* header END */
+
+/* mainbodyer */
+.mainbodyer{
+	position:relative;
+	min-height:1300px;
+	margin-bottom: 10px;
+}
+
+/* silde part */
+.sildepic{
+	height:400px;
+	margin-bottom:20px;
+}
+
+.kiss-slider{margin:20px auto;}
+.kiss-slider li{height:400px;}
+.kiss-slider li img{width: 100%;    height: 392px;}
+.sildepic{
+	position:relative;
+}
+.sildepic .kiss-pagination {
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	bottom:10px;
+	z-index: 80;
+}
+.sildepic .kiss-pagination button{
+	display:inline-block;
+	margin:0 3px;
+	border: none;
+	background-color: #333;
+	width: 40px;
+	height: 10px;
+	opacity: 0.7;
+}
+.sildepic .kiss-pagination button.active{
+	opacity: 1;
+}
+.sildepic .ctrlbar a{ 
+	position:absolute; z-index:99;top:175px; opacity:.5; width:45px; height:45px;
+	color:#666;font-size:30px;
+	text-align:center;}
+.sildepic .ctrlbar a:hover{ opacity:.8;}
+.sildepic .ctrlbar .previous{ left:10px;}
+.sildepic .ctrlbar .next{ right:10px;}
+/* goods part */
+.goods_class{
+	text-align:center;
+}
+.goods_class ul{
+	position:relative;
+	z-index:9;
+}
+.goods_class ul li{
+	border:1px solid #999;
+	overflow:hidden;
+	width:150px;
+	background-color:#37a237;
+	transition:.2s;
+}
+.goods_class ul li.active,
+.goods_class ul li:hover{
+	border-left:5px solid #336600;
+	color:#336600;
+	background:#ECECEC;
+}
+.goods_class ul li.active a{
+	color:#006633;
+}
+.goods_class ul li.active{
+	border-right:none;
+	border-bottom:none;
+	width:147px;	
+	background:#ECECEC;
+}
+.goods_class ul:last-child li.active{
+	border-bottom: 1px solid #333;
+}
+.goods_class ul li a{
+	color:#FFF;
+	width:100%;
+	display:block;
+	height:50px;
+	line-height:50px;
+	font-size:16px;
+	transition:.5s;
+	
+}
+.goods_class ul li:hover a{
+	background:#ececec;
+	color:#336600;
+}
+
+/* list part */
+.goods_list{
+	position:absolute;
+	padding:5px;
+	padding-bottom: 20px;
+	width:1007px;
+	right:0;
+	border:1px solid #999;
+	background:#ececec;
+}
+
+/* item part */
+.item{
+	width:287px;
+	background:#FFFFFF;
+	padding:8px;
+	border:1px solid #666;
+	float:left;
+	margin:15px;
+	border-radius:5px;
+	position:relative;
+}
+.item:hover{
+	border-color:#F00;
+}
+
+.item img{
+	width:100%;
+}
+
+.item h4{
+	margin-top:10px;
+	text-align:left;
+	font-size:16px;
+	border-bottom:1px solid #333;
+	padding-bottom:5px;
+	margin-bottom:7px;
+}
+.item .price{
+	margin-top:10px;
+	font-size:14px;
+}
+.item .price span{
+	color:#F00;
+}
+.item .addin{
+	position:absolute;
+	bottom:10px;
+	right:8px;
+	font-size:16px;
+	padding:5px;
+	background:#F33;
+	color:#FAFAFA;
+}
+.more{
+	position: absolute;
+	background: #CECECE;
+	width: 992px;
+	right:0px;
+	bottom: 0px;
+	padding: 5px;
+	text-align: right;
+	padding-right: 20px;
+}
+/* page part*/
+
+
+/* goods.html */
+.serchbar{
+	margin-top:40px;
+	background:#F5F5F5;
+	height:40px;
+	border:1px solid #E8E8E8;
+}
+.serchbar a,.serchbar div{
+	margin-left:10px;
+	height:40px;
+	float:left;
+	line-height:40px;
+}
+.serchbar a{
+	display:block;
+}
+.serchbar input{
+	width:40px;
+	height:22px;
+	border:none;
+	padding:2px;
+	border:1px solid #E8E8E8;
+}
+.serchbar input[type="text"]:focus{
+	border:1px solid #F00;
+}
+.serchbar input[type=button]{
+	height:26px;
+	color:#333;
+}
+.serchbar input[type=button]:hover{
+	border:1px solid #F00;
+}
+.serchbar select{
+	width:80px;
+	border:none;
+	font-size:12px;
+	appearance:none;
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	background:url("./images/arrow.png") no-repeat scroll right center transparent;
+	background-color:#FFF;
+}
+
+/* goods mainbodyer */
+.goodslist{
+	margin-top:20px;
+	height:1130px;
+	background-color:#FFF;
+	border:1px solid #E8E8E8;
+}
+.goodslist{
+	padding:0px;
+}
+
+/* page number */
+.pageNo{
+	white-spacing:nowrap;
+	margin-top:10px;
+}
+.pageNo ul{
+	float:left;
+}
+.pageNo a{
+	margin-left:10px;
+	float:left;
+	border:1px solid #CCC;
+	height:30px;
+	padding:0 10px;
+	line-height:30px;
+	text-align:center;
+	text-decoration:none;
+	background:#FFF;
+}
+.pageNo a:hover{
+	border-color:#F33;
+}
+.pageNo li{
+	float:left;
+}
+.pageNo a.active{
+	background:#F33;
+	color:#FFF;
+}
+
+/* page number END*/
+
+/* goods END */
+
+/* goodspage.html */
+
+/* goods bar */
+.goodsbar{
+	margin-top:20px;
+}
+.goodsbar .photo{
+	width:40%;
+	padding:0 5%;
+	
+}
+.goodsbar img{
+	width:100%;
+	border:2px solid #e8e8e8;
+}
+
+.gbar{
+	width:40%;
+	height:200px;
+	margin-right:5%;
+}
+.goods_info{
+	height:300px;
+	border-bottom:1px solid #CCC;
+	margin-bottom:20px;
+}
+.goods_info h3{
+	font-size:25px;
+	padding:40px 0 5px 20px;
+	border-bottom:1px solid #CCC;
+	background:#FFF;
+	margin:5px 0;
+}
+.goods_info .price{
+	margin-top:10px;
+	font-size:25px;
+	color:#F00;
+}
+.goods_info .ls{
+	margin-bottom:0;
+	text-decoration:line-through;
+}
+.goods_info .gh{
+	font-size:18px;
+}
+.goods_info .num{
+	font-size:20px;
+}
+.goods_info .num input{
+	border:1px solid #CCC;
+	text-align:center;
+	height:40px;
+	width:40px;
+}
+.goods_info .num input:focus{
+	border-color:#F00;
+}
+.goods_info .num button{
+	border:1px solid #CCC;
+	padding:2px;
+	font-size:10px;
+	line-height:12px;
+	position:absolute;
+}
+.goods_info .num span{
+	margin-left:40px;
+}
+.goods_info .num button:hover{
+	border:1px solid #F00;
+}
+.goods_info .num #add{
+	top:0;
+}
+.goods_info .num #sub{
+	bottom:0;
+}
+.goods_info> div{
+	margin-left:20px;
+	margin-bottom:20px;
+	font-size:14px;
+	position:relative;
+}
+.gbar .btn{
+	border:2px solid #F00;
+	width:180px;
+	margin-right:20px;
+	height:45px;
+}
+.gbar .btn:nth-child(1){
+	background:#FCC;
+	color:#F00;
+}
+.gbar .btn:nth-child(2){
+	background:#F00;
+	color:#FFF;
+}
+.goods_det{
+	border-top:2px solid #e8e8e8;
+	margin-top:20px;
+	padding:20px 0;
+	margin-bottom:20px;
+	position: relative;
+	padding-bottom: 0;
+}
+.note{
+	width:260px;
+	border:4px solid #e8e8e8;
+	padding:5px;
+	font-size:14px;
+	padding-bottom:10px;
+}
+.flow{
+	position:fixed;
+	top: 10px;
+	background: #fafafa;
+	box-shadow: 2px 2px 2px #333;
+}
+.flow2{
+	bottom:0;
+	position: absolute;
+	background: #fafafa;
+}
+.note h4{
+	margin-top:10px;
+	font-size:18px;
+	text-align:center;
+	border-bottom:1px solid #666;
+	padding-bottom:5px;
+	margin-bottom:5px;
+	color:#F90;
+}
+.note p{
+	text-align:justify;
+}
+.note p:first-letter{
+	margin-left:25px;
+}
+.det{
+	width:70%;
+	margin-right:40px;
+}
+.det img{
+	width:100%;
+}
+/* goods page END */
+
+/* bill shopcar .html */
+
+.car h3,.bill h3{
+	font-size:25px;
+	border-left:5px solid #F00;
+	padding-left:10px;
+	margin-bottom:20px;
+}
+.car table,.bill table{
+	width:100%;
+	text-align:center;
+	background:#ececec;
+	margin: 0 auto;
+	table-layout:fixed; 
+}
+.car table tr th,.billitem table tr th{
+	background:#555;
+	padding:5px;
+	color:#FFF;
+	height:20px;
+}
+.car table tr td,.billitem  table tr td{
+	height:110px;
+	padding:10px;
+}
+.car table tr td img, .billitem  table tr td img{
+	height:100px;
+}
+.car table tr:hover, .billitem  table tr:hover{
+	background:#cecece;
+}
+.car table tr td input{
+	text-align:center;
+	width:40px;
+	padding:5px;
+}
+.car table tr td input[type=button]{
+	border:1px solid #333;
+	height:25px;
+	padding:0;
+}
+.carbar{
+	margin-top:10px;
+}
+.carbar div{
+	height:35px;
+	float:left;
+	width:14%;
+	line-height:35px;
+	text-align:center;
+	background:#CCC;
+}
+.carbar div input[type=button]{
+	height:28px;
+	width:40px;
+}
+.carbar div a{
+	background:#03F;
+	float:right;
+	width:60px;
+	margin-right:20px;
+	color:#FFF;
+}
+.carbar .price{
+	color:#F00;
+	width:16%;
+}
+.menu{
+	border-bottom: 2px solid #CCC;
+	height: 29px;
+}
+.bill .menu li{
+	float:left;
+	border-left: 1px solid #CCC;
+}
+.bill .menu li:last-child{
+	border-right: 1px solid #CCC;
+}
+.bill .menu li a{
+	padding:5px;
+	background: #fff;
+	color:#F00;
+	font-size: 18px;
+	text-decoration: none;
+}
+
+.bill .menu li a:hover{
+	border-bottom: 2px solid #F77;
+}
+.bill .menu li.active a{
+	border-bottom: 2px solid #F00;
+}
+
+.billitem{
+	margin: 10px;
+	border:1px solid #000;
+}
+.billinfo{
+	background:#333;
+	height: 30px;
+	color:#FFF;
+}
+.billinfo div{
+	float: left;
+	margin-left: 10px;
+	padding: 5px;
+}
+.billinfo span div{
+	width: 180px;
+}
+
+#billwin{
+	width: 100%;
+	border:none;
+}
+
+/* bill shopcar END */
+
+
+/* footer */
+.footer{
+	height: 160px;
+	background-color: #333;
+	padding-top:20px;
+}
+.footer .info{
+	padding-top: 20px;
+	text-align: center;
+	color:#CCC;
+	font-size: 14px;
+	border-top: 1px solid #FFF;
+}
+.footer .info a{
+	color:#CCC;
+	text-decoration:none;
+}
+.footer .info img{
+	height:40px;
+	display:inline-block;
+	position:absolute;
+	margin-left:-45px;
+}
